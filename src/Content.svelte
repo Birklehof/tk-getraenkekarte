@@ -44,7 +44,7 @@
         alert('Invalid file');
       }
       card.set(newCard);
-      window.location.reload();
+      // window.location.reload();
     });
   }
 
