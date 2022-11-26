@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Link } from "svelte-navigator";
-  import { card, type Card } from './store.js';
+  import { card, type Card, type Category, type Drink } from './store.js';
 
   let tab: string = 'general';
   let files: FileList;
@@ -20,14 +20,14 @@
       if (loadedCard.title && loadedCard.categories) {
         newCard.title = loadedCard.title;
         
-        loadedCard.categories.forEach(category => {
+        loadedCard.categories.forEach((category: Category) => {
           if (category.name && category.color && category.drinks) {
             let newCategory = {
               name: category.name,
               color: category.color,
               drinks: []
             };
-            category.drinks.forEach(drink => {
+            category.drinks.forEach((drink: Drink) => {
               if (drink.name && drink.price) {
                 newCategory.drinks.push({
                   name: drink.name,
@@ -48,7 +48,7 @@
     });
   }
 
-  function download(filename, text) {
+  function download(filename: string, text: string) {
     var element = document.createElement('a');
     element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
     element.setAttribute('download', filename);
@@ -66,7 +66,7 @@
     $card.lastUpdate = Date.now();
   }
 
-  function addDrink(categoryIndex) {
+  function addDrink(categoryIndex: number) {
     $card.categories = $card.categories.map((category, index) => {
       if (index === categoryIndex) {
         return {

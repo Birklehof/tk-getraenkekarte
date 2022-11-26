@@ -2,29 +2,28 @@
   import { Link } from "svelte-navigator";
   import { card } from './store.js';
 
-  function formatPrice(price) {
+  function formatPrice(price: number) {
     return price.toString().replace('.', ',');
   }
 
   /* Scroll from top to bottom and back up, repeat */
-  let up = false;
-  function scroll() {
-    let current = window.scrollY;
-    if (up) {
-      if (current > 0) {
-        window.scrollBy(0, -1);
-      } else {
-        up = false;
-      }
-    } else {
-      if (current < document.body.scrollHeight - window.innerHeight) {
-        window.scrollBy(0, 1);
-      } else {
-        up = true;
-      }
-    }
-  }
-
+  // let up = false;
+  // function scroll() {
+  //   let current = window.scrollY;
+  //   if (up) {
+  //     if (current > 0) {
+  //       window.scrollBy(0, -1);
+  //     } else {
+  //       up = false;
+  //     }
+  //   } else {
+  //     if (current < document.body.scrollHeight - window.innerHeight) {
+  //       window.scrollBy(0, 1);
+  //     } else {
+  //       up = true;
+  //     }
+  //   }
+  // }
   // const interval = setInterval(scroll, 100);
 
 </script>
