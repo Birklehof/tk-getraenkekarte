@@ -32,7 +32,7 @@
     "@tsconfig/svelte": "^3.0.0",
     "autoprefixer": "^10.4.4",
     "daisyui": "^2.13.2",
-    "electron": "^21.2.1",
+    "electron": "^22.3.21",
     "electron-builder": "^23.6.0",
     "postcss": "^8.4.12",
     "postcss-load-config": "^3.1.3",
